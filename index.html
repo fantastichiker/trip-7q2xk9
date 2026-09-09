@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>行程规划 · 访问验证</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:#FBF8F0;
+    min-height:100vh;
+    display:flex;align-items:center;justify-content:center;
+    color:#3a3a3a;
+  }
+  .gate{
+    background:#FFFEF9;
+    border:1px solid #E3DCCB;
+    border-radius:12px;
+    padding:48px 40px;
+    max-width:400px;
+    width:90%;
+    text-align:center;
+    box-shadow:0 4px 24px rgba(0,0,0,0.06);
+  }
+  .icon{font-size:48px;margin-bottom:16px}
+  h1{
+    font-size:20px;font-weight:600;color:#2f5d50;
+    margin-bottom:8px;letter-spacing:1px;
+  }
+  .sub{font-size:13px;color:#9a9384;margin-bottom:32px;line-height:1.6}
+  .input-row{
+    display:flex;gap:8px;margin-bottom:16px;
+  }
+  input{
+    flex:1;
+    padding:14px 16px;
+    border:1.5px solid #D8CFBC;
+    border-radius:8px;
+    font-size:16px;
+    background:#FBF8F0;
+    color:#3a3a3a;
+    outline:none;
+    transition:border-color .2s;
+    letter-spacing:4px;
+    text-align:center;
+  }
+  input:focus{border-color:#2f5d50}
+  button{
+    width:100%;
+    padding:14px;
+    background:#2f5d50;
+    color:#FFFEF9;
+    border:none;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:background .2s;
+    letter-spacing:2px;
+  }
+  button:hover{background:#264d42}
+  button:active{transform:scale(0.98)}
+  .err{
+    color:#b95837;font-size:13px;margin-top:12px;
+    min-height:18px;transition:opacity .2s;
+  }
+  .hint{
+    margin-top:24px;font-size:11px;color:#C9BFA8;
+    line-height:1.6;
+  }
+</style>
+</head>
+<body>
+<div class="gate">
+  <div class="icon">🗺️</div>
+  <h1>锵锵五人行 · 美东行程</h1>
+  <p class="sub">请输入访问口令以查看行程详情<br>口令仅在本设备本次会话内有效</p>
+  <div class="input-row">
+    <input type="password" id="pwd" placeholder="请输入口令" maxlength="12" autocomplete="off">
+  </div>
+  <button id="enter" type="button">进入行程</button>
+  <div class="err" id="err"></div>
+  <p class="hint">行程含个人住宿与出行信息，请勿分享口令或链接</p>
+</div>
+<script>
+  // 口令以 SHA-256 哈希存储，源码不含明文
+  const HASH="d83f9ae7abfa668540fdc6aaf912f92156b09775e1fd68903284a9c42bdaac61";
+  const TARGET="6p0xM6Bn.html";
+  async function sha256Hex(s){
+    const buf=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));
+    return [...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,"0")).join("");
+  }
+  async function check(){
+    const v=document.getElementById("pwd").value.trim();
+    const err=document.getElementById("err");
+    const h=await sha256Hex(v);
+    if(h===HASH){
+      sessionStorage.setItem("trip_auth","1");
+      window.location.href=TARGET;
+    }else{
+      err.textContent="口令不正确，请重试";
+      document.getElementById("pwd").value="";
+      document.getElementById("pwd").focus();
+    }
+  }
+  document.getElementById("enter").addEventListener("click",check);
+  document.getElementById("pwd").addEventListener("keydown",e=>{
+    if(e.key==="Enter")check();
+  });
+  // 已验证则直接进入
+  if(sessionStorage.getItem("trip_auth")==="1"){
+    window.location.href=TARGET;
+  }
+  document.getElementById("pwd").focus();
+</script>
+</body>
+</html>
