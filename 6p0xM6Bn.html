@@ -35,6 +35,8 @@
   .day-h .t{flex:1;min-width:0;}
   .day-h .t .ti{font-size:14.5px;font-weight:700;}
   .day-h .t .sm{font-size:11.5px;color:var(--sub);margin-top:1px;}
+  .day-h .t .wx{font-size:11px;color:var(--green);margin-top:3px;font-weight:600;}
+  .day-h .t .sx{font-size:11px;color:#a06a20;margin-top:2px;}
   .day-h .flow{font-size:10.5px;color:var(--sub);text-align:right;max-width:34%;}
   .day-b{padding:6px 8px;}
   .item{display:flex;gap:10px;padding:9px 10px;border-radius:10px;cursor:pointer;border:1px solid transparent;}
@@ -166,6 +168,7 @@
       <span class="pill">可视化：真实街道地图（在线 Esri/OSM 瓦片，断网自动切内联离线街道图）+ 编号坐标/酒店/收藏餐厅，点 pin 看详情、🍽️/🏨 与导航按钮一键跳 Google 地图</span>
       <span class="pill">所有时间/票价/开放日均已联网核验，行前 7 天再刷一次</span>
       <span class="pill">底图为 Esri 世界街道图/OpenStreetMap 真实街道（谷歌地图 JS 需付费 Key，效果等同）</span>
+      <span class="pill">🌦 天气/日落概率 09/16 更新：9/25-9/30 为逐日预报，10/1 起为气候长期预测；9/24 前每 2 天自动刷新</span>
     </div>
   </header>
 
@@ -279,6 +282,8 @@ const DAYS=[
  summary:"纯交通日，22:00 落地后入境取行李去 Roxbury 公寓，不排正式游玩。",
  flow:"首都T2 → HU729 → Logan E → Roxbury",
  climate:"波士顿 9 月下旬历史均值 高 23℃/低 14℃，深夜约 13-15℃，随身放外套。",
+ wx:"⛅ 22°/14° · 阴 · 预报09/16",
+ sx:"🌙 抵达日 · 无日落安排（22:00 落地）",
  items:[
  {id:"0925-flight",t:"18:45-22:00",type:"交通",title:"HU729 北京首都 T2 → 波士顿洛根 E",
   open:"飞行约 13h；22:00 为落地时间，5 人过海关取行李后实际出机场约 23:00-24:00。",
@@ -300,6 +305,8 @@ const DAYS=[
  summary:"10:00 从酒店从容出发：上午走自由之路南段（Downtown→North End），North End 吃午餐，下午乘 F4 渡轮去 Charlestown 登宪法号、看邦克山，晚上按体力决定是否看 Red Sox。",
  flow:"Roxbury 10:00 → Faneuil Hall 10:20 → 自由之路南段 → North End 午餐 → F4 渡轮/宪法号/邦克山 → 回市区 → Fenway 可选 19:15",
  climate:"白天约 18-23℃；渡轮甲板与傍晚有风，备一件防风外套。历史同期约 10 个雨日，行前 3 天看降雨概率。",
+ wx:"☁️ 25°/15° · 阴 · 预报09/16",
+ sx:"🌇 日落18:34 · Long Wharf 港畔 · 概率30%",
  items:[
  {id:"0926-skip",t:"05:15-06:27",type:"风险",title:"B6717 BOS→JFK 为甩尾航段，不乘坐",
   open:"该段标注不乘坐、不去机场。",
@@ -346,6 +353,8 @@ const DAYS=[
  summary:"学术人文与科技气质的一天。特意排在周日——Harvard Art Museums 周一闭馆。",
  flow:"Roxbury 10:00 → Harvard Square 10:30 → Harvard Art Museums → MIT Museum → Charles River → 晚餐",
  climate:"白天 18-23℃，校园步行多，轻外套+舒适鞋。",
+ wx:"☁️ 24°/16° · 阴 · 预报09/16",
+ sx:"🌇 日落18:32 · 查尔斯河 Esplanade · 概率55%",
  items:[
  {id:"0927-harvard",t:"10:00-13:15",type:"人文",title:"Harvard Yard + Harvard Square + Harvard Art Museums",
   open:"10:00 从酒店出发；Harvard Yard 校园户外全天开放，Harvard Art Museums 周日 10:00-17:00（周一闭馆，所以排今天）。",
@@ -381,6 +390,8 @@ const DAYS=[
  summary:"两大美术馆 + 后湾街区。注意：Gardner 周一 11:00 才开门（周二闭馆），MFA 周一 10:00 开门，顺序已据此修正。",
  flow:"Roxbury 10:00 → Gardner(11:00) → MFA(13:30) → Copley/BPL → Newbury St → 晚餐",
  climate:"以室内为主，白天 17-22℃，傍晚 Back Bay 逛街加薄外套。",
+ wx:"🌧 16°/15° · 毛毛雨 · 预报09/16",
+ sx:"🌇 日落18:30 · Back Bay 河滨 Hatch Shell · 概率40%",
  items:[
  {id:"0928-gardner",t:"11:00-13:00",type:"博物馆",title:"Isabella Stewart Gardner Museum（⚠️周一 11:00 开门）",
   open:"周一/三/五 11:00-17:00，周四 11:00-21:00，周六日 10:00-17:00，周二闭馆（已官网核验）。9/28 周一最早 11:00 入场，闭馆前 30 分钟停售。",
@@ -415,6 +426,8 @@ const DAYS=[
  summary:"坐火车而非飞机，避开机场往返与天气延误。选 10:00-10:30 车次、14:00 前后到纽约、15:00 后入住，傍晚轻量 citywalk。",
  flow:"Roxbury 09:20 → South Station → Amtrak 10:00 段 → Penn/Moynihan → EVEN Hotel → Grand Central/NYPL/Bryant Park → 百老汇可选",
  climate:"纽约 9 月底白天约 22-24℃、晚间 16℃上下。",
+ wx:"🌧 28°/20° · 毛毛雨 · 预报09/16",
+ sx:"🌇 日落18:41 · Top of the Rock · 概率45%",
  items:[
  {id:"0929-train",t:"10:15-14:15",type:"交通",title:"Amtrak 波士顿 South Station → 纽约 Penn",
   open:"建议买 10:00-10:30 出发的 Northeast Regional 或 Acela，约 3.5-4h，14:00 前后到 Penn/Moynihan。",
@@ -442,6 +455,8 @@ const DAYS=[
  summary:"移民史—金融史—城市创伤—重建，再走过布鲁克林大桥到 DUMBO 看日落。Katz's 午餐插入。",
  flow:"酒店 10:00 → Battery Park 渡轮 → 自由女神/Ellis Island → Katz's 午餐 → 9/11 → 华尔街 → 布鲁克林大桥 → DUMBO",
  climate:"白天 20-24℃，河口与桥上风大，带防风层。",
+ wx:"⛈ 29°/22° · 阵雨 · 预报09/16",
+ sx:"🌇 日落18:39 · DUMBO 大桥公园 · 概率25%",
  items:[
  {id:"0930-liberty",t:"10:00-13:30",type:"人文",title:"Statue of Liberty / Ellis Island（官方渡轮）",
   open:"唯一官方运营商 Statue City Cruises，从 Battery Park 出发，运营约 8:30/9:00 首班至下午（季末末班约 15:30，以购票页为准）；按 10 点出发建议订 10:30/11:00 前后班次，不必赶首班，但安检类似机场、需预留排队，别拖到中午人最多。",
@@ -480,6 +495,8 @@ const DAYS=[
  summary:"纽约最核心艺术日。Met 安排在周四——已核验周三闭馆，周四开放正确。",
  flow:"酒店 10:00 → The Met 10:20 → Central Park → Frick(可选) → UES 晚餐",
  climate:"白天 19-23℃，公园傍晚转凉。",
+ wx:"⛅ 22°/15° · 晴间多云 · 长期预测",
+ sx:"🌇 日落18:37 · Central Park 大草坪 · 概率60%",
  items:[
  {id:"1001-met",t:"10:20-15:00",type:"博物馆",title:"The Met 大都会艺术博物馆（核心路线）",
   open:"第五大道馆：周日-周二、周四 10:00-17:00，周五周六 10:00-21:00，周三闭馆（已官网核验）；10/1 周四 10:00 开门。建议 3-4 小时核心路线。",
@@ -509,6 +526,8 @@ const DAYS=[
  summary:"白天西区城市更新与街区，晚上看《怪奇物语》——本行程最推荐的新增安排，40 刀 rush 票。",
  flow:"09:45 买 rush 票 → Chelsea Market → High Line → West Village/SoHo → 晚场怪奇物语",
  climate:"白天 19-23℃，晚间剧场空调足，带薄外套。",
+ wx:"☀️ 20°/12° · 晴 · 长期预测",
+ sx:"🌇 日落18:35 · High Line 南段漫步 · 概率60%",
  items:[
  {id:"1003-rush",t:"09:45-10:45",type:"演出",title:"Marquis 票房排队买《怪奇物语》40 刀 rush 票",
   open:"Marquis Theatre（210 W 46th St）周一到六 10:00 开门、周日 12:00；提前 10-15 分钟到基本稳拿超前排（攻略实测）。",
@@ -554,6 +573,8 @@ const DAYS=[
  summary:"白天自然史博物馆，下午 MoMA 现代艺术（周六正常售票约$25/人），傍晚 SUMMIT 看日落+夜景。",
  flow:"酒店 10:00 → AMNH 10:25 → UWS 午餐(Zabar's) → MoMA(正常售票) → SUMMIT 日落场",
  climate:"白天 19-23℃，观景台高空风大、室内有空调，备薄外套。",
+ wx:"☀️ 21°/11° · 晴 · 长期预测",
+ sx:"🌇 日落18:33 · SUMMIT 观景台 · 概率60%",
  items:[
  {id:"1002-amnh",t:"10:25-13:30",type:"博物馆",title:"American Museum of Natural History 自然历史博物馆",
   open:"每日 10:00-17:30（已官网核验），开门后人渐多，10:25 到可避开最早一波。",
@@ -585,6 +606,8 @@ const DAYS=[
  summary:"为 10/5 凌晨航班留体力。11:00 前退房寄存，傍晚取行李，20:00-20:30 出发去 JFK T4。",
  flow:"退房寄存 → Williamsburg/Greenpoint（或罗斯福岛轻量）→ 取行李 → JFK T4",
  climate:"白天 18-21℃，晚间去机场加外套。",
+ wx:"⛅ 21°/17° · 多云 · 长期预测",
+ sx:"🌇 日落18:31 · 布鲁克林大桥公园 · 概率55%",
  items:[
  {id:"1004-checkout",t:"11:00 前",type:"住宿",title:"EVEN Hotel 退房 + 寄存行李",
   open:"11:00 前退房；确认酒店可寄存到晚上、问清取行李最晚时间。",
@@ -614,6 +637,8 @@ const DAYS=[
 {id:"d1005",date:"10/05",wd:"周一",city:"飞行",title:"凌晨离开纽约，飞往台北",
  summary:"实际从 10/4 晚开始，不安排纽约游玩。",flow:"JFK T4 → CI11 → 飞行 → 台北",
  climate:"机舱干燥，备保湿、长袖。",
+ wx:"⛅ 20°/9° · 北京气候 · 长期预测",
+ sx:"🌙 飞行日 · 无日落安排",
  items:[
  {id:"1005-ci11",t:"01:15",type:"交通",title:"CI11 纽约 JFK T4 → 台北桃园 T2（10/6 05:50 到）",
   open:"提前 3 小时到（即 10/4 22:00 前）；值机-托运-安检-找登机口。",
@@ -626,6 +651,8 @@ const DAYS=[
 {id:"d1006",date:"10/06",wd:"周二",city:"飞行",title:"台北转机，抵达北京",
  summary:"桃园转机约 9.5 小时，15:25 CI517 回京，18:50 到首都 T3。",flow:"桃园 T2 → 转机等待 → CI517 → 北京 T3",
  climate:"—",
+ wx:"⛅ 18°/7° · 北京气候 · 长期预测",
+ sx:"🌙 飞行日 · 无日落安排",
  items:[
  {id:"1006-transit",t:"05:50-15:25",type:"交通",title:"台北桃园 T2 转机（不入境）",
   open:"先确认下段登机牌与登机口；长转机找休息区/餐食/洗漱。",
@@ -902,7 +929,7 @@ function renderList(){
   const el=document.getElementById("view-list");let h="";
   DAYS.forEach(d=>{
     h+='<div class="day"><div class="day-h"><div class="date-badge"><div class="d">'+d.date+'</div><div class="w">'+d.wd+'</div></div>'+
-       '<div class="t"><div class="ti">'+d.city+" · "+d.title+'</div><div class="sm">'+d.summary+'</div></div>'+
+       '<div class="t"><div class="ti">'+d.city+" · "+d.title+'</div><div class="sm">'+d.summary+'</div>'+(d.wx?'<div class="wx">'+d.wx+'</div>':'')+(d.sx?'<div class="sx">'+d.sx+'</div>':'')+'</div>'+
        '<div class="flow">'+d.flow+'</div></div><div class="day-b">';
     d.items.forEach(it=>{
       h+='<div class="item" onclick="openDetail(\''+it.id+'\')"><div class="time">'+it.t+'</div>'+
