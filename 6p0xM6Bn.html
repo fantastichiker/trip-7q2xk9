@@ -182,7 +182,7 @@
       <span class="pill">可视化：真实街道地图（在线 Esri/OSM 瓦片，断网自动切内联离线街道图）+ 编号坐标/酒店/收藏餐厅，点 pin 看详情、🍽️/🏨 与导航按钮一键跳 Google 地图</span>
       <span class="pill">所有时间/票价/开放日均已联网核验，行前 7 天再刷一次</span>
       <span class="pill">底图为 Esri 世界街道图/OpenStreetMap 真实街道（谷歌地图 JS 需付费 Key，效果等同）</span>
-      <span class="pill">🌦 天气/日落概率 09/16 更新：9/25-9/30 为逐日预报，10/1 起为气候长期预测；9/24 前每 2 天自动刷新</span>
+      <span class="pill">🌦 天气/日落概率 09/18 更新：9/25-10/2 为 Open-Meteo 逐日预报，10/3 起为气候长期预测；9/24 前每 2 天自动刷新</span>
     </div>
   </header>
 
@@ -314,7 +314,7 @@ const DAYS=[
  summary:"纯交通日，22:00 落地后入境取行李去 Roxbury 公寓，不排正式游玩。",
  flow:"首都T2 → HU729 → Logan E → Roxbury",
  climate:"波士顿 9 月下旬历史均值 高 23℃/低 14℃，深夜约 13-15℃，随身放外套。",
- wx:"⛅ 22°/14° · 阴 · 预报09/16",
+ wx:"🌦️ 16°/14° · 毛毛雨 · 预报09/18",
  sx:"🌙 抵达日 · 无日落安排（22:00 落地）",
  items:[
  {id:"0925-flight",t:"18:45-22:00",type:"交通",title:"HU729 北京首都 T2 → 波士顿洛根 E",
@@ -337,8 +337,8 @@ const DAYS=[
  summary:"10:00 从酒店从容出发：上午走自由之路南段（Downtown→North End），North End 吃午餐，下午乘 F4 渡轮去 Charlestown 登宪法号、看邦克山，晚上按体力决定是否看 Red Sox。",
  flow:"Roxbury 10:00 → Faneuil Hall 10:20 → 自由之路南段 → North End 午餐 → F4 渡轮/宪法号/邦克山 → 回市区 → Fenway 可选 19:15",
  climate:"白天约 18-23℃；渡轮甲板与傍晚有风，备一件防风外套。历史同期约 10 个雨日，行前 3 天看降雨概率。",
- wx:"☁️ 25°/15° · 阴 · 预报09/16",
- sx:"🌇 日落18:34 · Long Wharf 港畔 · 概率30%",
+ wx:"🌧️ 16°/13° · 小雨 · 预报09/18",
+ sx:"🌇 日落18:34 · Long Wharf 港畔 · 概率37%",
  items:[
  {id:"0926-skip",t:"05:15-06:27",type:"风险",title:"B6717 BOS→JFK 为甩尾航段，不乘坐",
   open:"该段标注不乘坐、不去机场。",
@@ -385,8 +385,8 @@ const DAYS=[
  summary:"学术人文与科技气质的一天。特意排在周日——Harvard Art Museums 周一闭馆。",
  flow:"Roxbury 10:00 → Harvard Square 10:30 → Harvard Art Museums → MIT Museum → Charles River → 晚餐",
  climate:"白天 18-23℃，校园步行多，轻外套+舒适鞋。",
- wx:"☁️ 24°/16° · 阴 · 预报09/16",
- sx:"🌇 日落18:32 · 查尔斯河 Esplanade · 概率55%",
+ wx:"☁️ 15°/13° · 阴 · 预报09/18",
+ sx:"🌇 日落18:32 · 查尔斯河 Esplanade · 概率59%",
  items:[
  {id:"0927-harvard",t:"10:00-13:15",type:"人文",title:"Harvard Yard + Harvard Square + Harvard Art Museums",
   open:"10:00 从酒店出发；Harvard Yard 校园户外全天开放，Harvard Art Museums 周日 10:00-17:00（周一闭馆，所以排今天）。",
@@ -422,8 +422,8 @@ const DAYS=[
  summary:"两大美术馆 + 后湾街区。注意：Gardner 周一 11:00 才开门（周二闭馆），MFA 周一 10:00 开门，顺序已据此修正。",
  flow:"Roxbury 10:00 → Gardner(11:00) → MFA(13:30) → Copley/BPL → Newbury St → 晚餐",
  climate:"以室内为主，白天 17-22℃，傍晚 Back Bay 逛街加薄外套。",
- wx:"🌧 16°/15° · 毛毛雨 · 预报09/16",
- sx:"🌇 日落18:30 · Back Bay 河滨 Hatch Shell · 概率40%",
+ wx:"☁️ 16°/14° · 阴 · 预报09/18",
+ sx:"🌇 日落18:30 · Back Bay 河滨 Hatch Shell · 概率62%",
  items:[
  {id:"0928-gardner",t:"11:00-13:00",type:"博物馆",title:"Isabella Stewart Gardner Museum（⚠️周一 11:00 开门）",
   open:"周一/三/五 11:00-17:00，周四 11:00-21:00，周六日 10:00-17:00，周二闭馆（已官网核验）。9/28 周一最早 11:00 入场，闭馆前 30 分钟停售。",
@@ -458,8 +458,8 @@ const DAYS=[
  summary:"坐火车而非飞机，避开机场往返与天气延误。选 10:00-10:30 车次、14:00 前后到纽约、15:00 后入住，傍晚轻量 citywalk。",
  flow:"Roxbury 09:20 → South Station → Amtrak 10:00 段 → Penn/Moynihan → EVEN Hotel → Grand Central/NYPL/Bryant Park → 百老汇可选",
  climate:"纽约 9 月底白天约 22-24℃、晚间 16℃上下。",
- wx:"🌧 28°/20° · 毛毛雨 · 预报09/16",
- sx:"🌆 日落18:41 · 概率45%偏低 · 当晚改看 SUMMIT 夜景",
+ wx:"🌦️ 16°/13° · 毛毛雨 · 预报09/18",
+ sx:"🌆 日落18:41 · 概率35%偏低 · 当晚改看 SUMMIT 夜景",
  items:[
  {id:"0929-train",t:"10:15-14:15",type:"交通",title:"Amtrak 波士顿 South Station → 纽约 Penn",
   open:"建议买 10:00-10:30 出发的 Northeast Regional 或 Acela，约 3.5-4h，14:00 前后到 Penn/Moynihan。",
@@ -487,8 +487,8 @@ const DAYS=[
  summary:"不登岛、不进 911 博物馆（按优先级定为不必要），走华尔街金融史 + 世贸 Oculus 打卡 + 海关大楼免费看，午后步行布鲁克林大桥到 DUMBO 看日落。Katz's 绕路已移到 10/3 顺路。",
  flow:"酒店 10:00 → 华尔街/铜牛/三一教堂 → 海关大楼 → 世贸 Oculus → 午餐(下城) → 布鲁克林大桥步行 → DUMBO 日落+晚餐",
  climate:"白天 20-24℃，河口与桥上风大，带防风层。",
- wx:"⛈ 29°/22° · 阵雨 · 预报09/16",
- sx:"🌇 日落18:39 · DUMBO 大桥公园 · 概率25%",
+ wx:"🌦️ 18°/16° · 毛毛雨 · 预报09/18",
+ sx:"🌇 日落18:39 · DUMBO 大桥公园 · 概率36%",
  items:[
  {id:"0930-downtown",t:"10:00-12:30",type:"人文",title:"华尔街 + 三一教堂 + 铜牛 + 海关大楼（金融史 Citywalk）",
   open:"三一教堂（74 Trinity Pl）工作日约 07:30-18:00 可入内（以当日为准）；纽交所门前广场可拍照不可入内；铜牛雕塑全天开放。",
@@ -524,8 +524,8 @@ const DAYS=[
  summary:"上午自然历史博物馆（10 点起床 10:25 到，避开人流），下午大都会 13:00-17:00 核心路线（周四开门正确），傍晚中央公园看夕阳（Belvedere Castle→Alice in Wonderland→Bethesda Terrace），UES 晚餐后 Bemelmans Bar 听钢琴爵士。",
  flow:"酒店 10:00 → AMNH 10:25-12:30 → UWS 午餐(Zabar's) → Met 13:00-17:00 → 中央公园夕阳 17:00-18:37 → UES 晚餐 → Bemelmans Bar",
  climate:"白天 19-23℃，公园傍晚转凉。",
- wx:"⛅ 22°/15° · 晴间多云 · 长期预测",
- sx:"🌇 日落18:37 · Central Park（Belvedere Castle 机位）· 概率60%",
+ wx:"🌦️ 20°/17° · 毛毛雨 · 预报09/18",
+ sx:"🌇 日落18:37 · Central Park（Belvedere Castle 机位）· 概率36%",
  items:[
  {id:"1001-amnh",t:"10:25-12:30",type:"博物馆",title:"American Museum of Natural History 自然历史博物馆（上午场）",
   open:"每日 10:00-17:30（已官网核验）；10/1 周四正常，10:25 到可避开开门首波。",
@@ -570,11 +570,11 @@ const DAYS=[
  ]},
 
 {id:"d1002",date:"10/02",wd:"周五",city:"纽约",title:"MoMA + 第五大道 Citywalk + Top of the Rock 日落",
- summary:"中城纯步行日：中央车站→圣帕特里克大教堂→第五大道→MoMA 核心名作，傍晚 17:30-20:00 登 Top of the Rock 看日落+夜景（60% 全行程最高概率，日落 18:33），下来 Rink Level 晚餐，全部步行圈、不折腾。",
+ summary:"中城纯步行日：中央车站→圣帕特里克大教堂→第五大道→MoMA 核心名作，傍晚 17:30-20:00 登 Top of the Rock 看日落+夜景（89% 全行程最高概率，日落 18:36），下来 Rink Level 晚餐，全部步行圈、不折腾。",
  flow:"酒店 10:00 → Grand Central 10:15-11:00 → St. Patrick's 11:15-12:00 → 午餐(中城) → MoMA 13:30-16:30 → 第五大道漫步 → Top of the Rock 17:30-20:00 → Rink Level 晚餐",
  climate:"白天 19-23℃，观景台高空风大、室内空调足，备薄外套。",
- wx:"☀️ 20°/12° · 晴 · 长期预测",
- sx:"🌇 日落18:33 · Top of the Rock · 概率60%",
+ wx:"🌤️ 20°/14° · 多云间晴 · 预报09/18",
+ sx:"🌇 日落18:36 · Top of the Rock · 概率89%",
  items:[
  {id:"1002-midtown",t:"10:15-12:30",type:"街区",title:"Grand Central + St. Patrick's Cathedral + 第五大道（中城 Citywalk）",
   open:"Grand Central 大厅开放至晚（店铺约 21:00）；St. Patrick's Cathedral（50th/5th）每日 06:30-20:45 免费入内；第五大道店铺 10:00 后开。",
@@ -593,7 +593,7 @@ const DAYS=[
   links:[{l:"官方·MoMA",u:OFF.moma,k:"off"},{l:"小红书·0元购MET和MoMA(已采集)",u:XHS.met0},{l:"小红书·MoMA 攻略",u:s("MoMA 纽约 攻略 必看")}],
   note:"16:30 出馆往洛克菲勒中心走 4 分钟，17:30 登 Top of the Rock；若意犹未尽，Top of the Rock 下来后 20:00 可回 MoMA 免费夜续看（周五到 20:00）。"},
  {id:"1002-totr",t:"17:30-20:00",type:"活动",title:"Top of the Rock 日落场（洛克菲勒中心 67/70 层露天观景台）",
-  open:"官网提前买 17:30 前后 timed entry（10/2 日落 18:33，日落前 45-60 分钟入场最佳，白天+日落+夜景三段全收）；运营至约 23:00。",
+  open:"官网提前买 17:30 前后 timed entry（10/2 日落 18:36，日落前 45-60 分钟入场最佳，白天+日落+夜景三段全收）；运营至约 23:00。",
   go:"MoMA 出来步行 4 分钟到 30 Rockefeller Plaza；17:30 安检入场→电梯上 67 层→再上 70 层露天层，占东南侧朝向（帝国大厦方向）。",
   why:["Top of the Rock 是纽约唯一能同时看帝国大厦+中央公园+曼哈顿全貌的露天观景台（70 层无玻璃遮挡），日落+夜景双收；60% 概率为全程最高，是全行程最值得守的日落机位。","与帝国大厦观景台不同：这里能拍到帝国大厦本身，且不用隔着玻璃。"],
   prep:["提前 1-2 天官网购 timed ticket（约 $40/人，5 人 $200）；日落时段人多，17:30 到能占到东南角好位置；高空风大带外套；恐高者可先走室内层。"],
@@ -601,7 +601,7 @@ const DAYS=[
   note:"若 18:00 后云量突增看不到日落，保留夜景段也值回票价；20:00 下楼到 Rink Level 晚餐。"},
  {id:"1002-dinner",t:"20:00-21:30",type:"餐饮",title:"Rockefeller Center Rink Level 晚餐（看完日落就近用餐）",
   open:"三家都在 30 Rockefeller Plaza 滑冰场下层（Rink Level），Top of the Rock 下楼即到，步行 1-2 分钟。",
-  go:"日落 20:00 后直接下电梯到 Rink Level：想好好吃选 Jupiter（22:00 关）或 NARO（23:00 关）；赶时间/预算优先选 5 Acres（20:00 关，需 19:30 前入座——今天日落 18:33，看完日落 19:00 下楼刚好赶 5 Acres）。",
+  go:"日落 20:00 后直接下电梯到 Rink Level：想好好吃选 Jupiter（22:00 关）或 NARO（23:00 关）；赶时间/预算优先选 5 Acres（20:00 关，需 19:30 前入座——今天日落 18:36，看完日落 19:00 下楼刚好赶 5 Acres）。",
   why:["日落机位下方就是晚餐区，看完日落无缝衔接、不折腾交通——今天一整天重心都在 Midtown 步行圈内，最符合「不折腾、集中」原则。"],
   prep:["5 人正餐建议提前订位（Jupiter Resy/OpenTable、NARO Resy）；5 Acres 无预订先到先得。"],
   food:[{n:"Jupiter（Rink Level·20 W 50th）",d:"意餐（罗马区域菜，SoHo 名店 King 团队）。招牌：手工意面——linguine 曼哈顿蛤蜊面、pappardelle 八小时炖牛尾宽面（意面$23-34），烤肉类与季节蔬菜。周一至六 11:30-22:00，周日闭。人均$60-90（含税小费），无强制服务费。接受预订（Resy/OpenTable），5人位建议提前3-5天，walk-in 也欢迎。米其林指南推荐，中城手工意面+新意大利酒，看完日落的正餐首选。",u:"https://www.jupiterrestaurant.nyc/",book:"✅",gmaps:"https://www.google.com/maps/place/Jupiter/@40.7597,-73.9790"},
@@ -615,8 +615,8 @@ const DAYS=[
  summary:"早上 9:45 抢 40 刀 rush 票（前置条件：抢到才能看晚场），白天 Chelsea Market + High Line + Hudson Yards 大松果 Vessel（新出片打卡点），Katz's 午餐顺路（从 9/30 挪来），晚上看《怪奇物语：The First Shadow》终演前最后窗口。",
  flow:"09:45 抢 rush → 11:00 Chelsea Market → High Line 北段 → 大松果 Vessel → Katz's 午餐 → 16:45 回中城 → 晚场怪奇物语 19:00",
  climate:"白天 19-23℃，晚间剧场空调足，带薄外套。",
- wx:"☀️ 21°/11° · 晴 · 长期预测",
- sx:"🌇 日落18:33 · 剧院区（看剧前）· 概率60%",
+ wx:"☀️ 23°/10° · 晴（气候）· 长期预测",
+ sx:"🌇 日落18:34 · 剧院区（看剧前）· 概率约70%（长期预测）",
  items:[
  {id:"1003-rush",t:"09:45-10:45",type:"演出",title:"Marquis 票房排队买《怪奇物语》40 刀 rush 票（前置条件）",
   open:"Marquis Theatre（210 W 46th St）周一到六 10:00 开门、周日 12:00；提前 10-15 分钟到基本稳拿超前排（攻略实测）。",
@@ -653,10 +653,10 @@ const DAYS=[
 
 {id:"d1004",date:"10/04",wd:"周日",city:"纽约",title:"落日飞车 + 日落公园（收官机动日）→ JFK",
  summary:"为 10/5 凌晨航班留体力。11:00 前退房寄存 → 罗斯福岛缆车（落日飞车 $3，4 分钟看曼哈顿天际线，小红书新收藏）→ 布鲁克林 Sunset Park 看日落（小红书新收藏，曼哈顿+自由女神天际线）→ 19:30 出发 JFK。",
- flow:"退房寄存 → 罗斯福岛缆车 11:30-13:00 → 午餐(中城) → 取行李 15:00 → Sunset Park 16:00-18:31 日落 → 19:30 出发 JFK T4",
+ flow:"退房寄存 → 罗斯福岛缆车 11:30-13:00 → 午餐(中城) → 取行李 15:00 → Sunset Park 16:00-18:32 日落 → 19:30 出发 JFK T4",
  climate:"白天 18-21℃，晚间去机场加外套。",
- wx:"⛅ 21°/17° · 多云 · 长期预测",
- sx:"🌇 日落18:31 · Sunset Park 山顶 · 概率55%",
+ wx:"☀️ 26°/13° · 晴间多云（气候）· 长期预测",
+ sx:"🌇 日落18:32 · Sunset Park 山顶 · 概率约70%（长期预测）",
  items:[
  {id:"1004-checkout",t:"11:00 前",type:"住宿",title:"EVEN Hotel 退房 + 寄存行李",
   open:"11:00 前退房；确认酒店可寄存到晚上、问清取行李最晚时间。",
@@ -671,8 +671,8 @@ const DAYS=[
   links:[{l:"小红书·纽约日落飞车(已采集)",u:XHS.tram},{l:"小红书·3美刀直升机感(已采集)",u:XHS.tram2}],
   note:"今天是上午去（非日落时段），缆车本身+曼哈顿全景已值回 $3；想看日落版可在 Sunset Park 看同一片天际线。"},
  {id:"1004-sunset",t:"15:30-18:40",type:"街区",title:"Sunset Park 日落公园看夕阳（小红书新收藏）",
-  open:"Sunset Park（布鲁克林 41-44 St & 5-7 Ave，公园全天开放；入口：4320 5th Ave 对面的 Key Food 超市正对公园入口——小红书高赞评论定位）；日落 18:31，16:00 前到占山顶机位。",
-  go:"15:00 回酒店取行李 → 打车/地铁 R 线到 45th St 站（约 40 分钟）→ 15:30-15:45 到公园南端小山坡最高点（曼哈顿天际线正面机位），铺野餐垫等日落 → 18:31 日落 → 18:45 离园。",
+  open:"Sunset Park（布鲁克林 41-44 St & 5-7 Ave，公园全天开放；入口：4320 5th Ave 对面的 Key Food 超市正对公园入口——小红书高赞评论定位）；日落 18:32，16:00 前到占山顶机位。",
+  go:"15:00 回酒店取行李 → 打车/地铁 R 线到 45th St 站（约 40 分钟）→ 15:30-15:45 到公园南端小山坡最高点（曼哈顿天际线正面机位），铺野餐垫等日落 → 18:32 日落 → 18:45 离园。",
   why:["是什么：1891 年建成的 24.5 英亩社区公园，位于布鲁克林高地，山顶可同时看到曼哈顿天际线+自由女神+Verrazzano 大桥+纽约港（小红书新收藏帖：天气好时草地上很多人坐着聊天发呆，远处曼哈顿一点点被夕阳染成粉色橘色）。","为什么今天：Sunset Park 在布鲁克林西南、离 JFK 车程约 30 分钟，是去机场路上最顺的日落机位——「看日落→上飞机」无缝衔接，符合不折腾原则。","体验目的：本地家庭氛围浓，比 DUMBO 更「纽约客」的日落方式，野餐垫+天际线，收官日最佳。"],
   prep:["带野餐垫/外套（山顶风大）；公园内有公共泳池区（10 月关闭）；附近餐厅不多，日落前可在中城/罗斯福岛吃好；18:45 前离园避免天黑。"],
   food:[{n:"Metro Pizzeria & Restaurant",d:"Sunset Park 附近意大利薄底披萨（本地家庭店）。招牌：意式香肠披萨(~$18)、芝士披萨(~$16)、Calzone(~$15)。每日11:00-22:00。人均$15-25(含税小费)，无服务费。不接受预订，本地人为主，日落前简餐合适。",u:s("Metro Pizzeria Sunset Park")}],
@@ -688,7 +688,7 @@ const DAYS=[
 {id:"d1005",date:"10/05",wd:"周一",city:"飞行",title:"凌晨离开纽约，飞往台北",
  summary:"实际从 10/4 晚开始，不安排纽约游玩。",flow:"JFK T4 → CI11 → 飞行 → 台北",
  climate:"机舱干燥，备保湿、长袖。",
- wx:"⛅ 20°/9° · 北京气候 · 长期预测",
+ wx:"☀️ 24°/12° · 北京气候 · 长期预测",
  sx:"🌙 飞行日 · 无日落安排",
  items:[
  {id:"1005-ci11",t:"01:15",type:"交通",title:"CI11 纽约 JFK T4 → 台北桃园 T2（10/6 05:50 到）",
@@ -702,7 +702,7 @@ const DAYS=[
 {id:"d1006",date:"10/06",wd:"周二",city:"飞行",title:"台北转机，抵达北京",
  summary:"桃园转机约 9.5 小时，15:25 CI517 回京，18:50 到首都 T3。",flow:"桃园 T2 → 转机等待 → CI517 → 北京 T3",
  climate:"—",
- wx:"⛅ 18°/7° · 北京气候 · 长期预测",
+ wx:"☀️ 24°/11° · 北京气候 · 长期预测",
  sx:"🌙 飞行日 · 无日落安排",
  items:[
  {id:"1006-transit",t:"05:50-15:25",type:"交通",title:"台北桃园 T2 转机（不入境）",
@@ -956,7 +956,7 @@ const EXTRA=[
 {id:"spot-bow",type:"街区",title:"Bow Bridge 弓桥",date:"10/1",open:"全天。",go:"The Mall 向西 5 分钟。",why:["1862 年铸铁拱桥，横跨湖区，是中央公园最上镜的桥、划船湖面的经典前景。"],prep:[],links:[]},
 {id:"spot-frick",type:"博物馆",title:"The Frick Collection 弗里克收藏",date:"10/1",open:"周四开放（周二闭馆），一般 10:00-18:00。",go:"Met 沿麦迪逊大道向南步行 15 分钟。",why:["钢铁大亨亨利·弗里克的私邸美术馆，小而精：维米尔《管家妇》、伦勃朗、荷尔拜因、戈萨尔特色浓郁，1.5h 可看完，是 Met 之后的精致收尾。"],prep:["疲劳则跳过。"],links:[{l:"小红书·Frick(已采集)",u:XHS.vanessa}]},
 {id:"spot-rock",type:"街区",title:"Rockefeller Center 洛克菲勒中心",date:"10/2",open:"户外全天；Top of the Rock 需购票。",go:"MoMA 旁步行 3 分钟。",why:["19座楼组成的城中城，金色普罗米修斯雕像、下沉广场（10 月起准备溜冰场），GE 大楼顶层即 Top of the Rock。"],prep:[],links:[]},
-{id:"spot-totr",type:"活动",title:"Top of the Rock 观景台（日落场·主行程）",date:"10/2",open:"约 09:00-23:00，日落场需 timed ticket（官网提前购）。",go:"30 Rockefeller Plaza，MoMA 步行 4 分钟；67 层室内→70 层露天。",why:["唯一能同时拍到帝国大厦+中央公园的主流观景台，70 层露天无玻璃遮挡；10/2 日落 18:33，17:30 入场三小时收齐白天+日落+夜景，概率 60% 为全程最高。"],prep:["提前 1-2 天官网购票（约 $40/人）；日落时段人多，占东南侧朝向；高空风大带外套。"],links:[{l:"官方",u:OFF.totr,k:"off"},{l:"小红书·4大观景台对比(已采集)",u:XHS.views4}]},
+{id:"spot-totr",type:"活动",title:"Top of the Rock 观景台（日落场·主行程）",date:"10/2",open:"约 09:00-23:00，日落场需 timed ticket（官网提前购）。",go:"30 Rockefeller Plaza，MoMA 步行 4 分钟；67 层室内→70 层露天。",why:["唯一能同时拍到帝国大厦+中央公园的主流观景台，70 层露天无玻璃遮挡；10/2 日落 18:36，17:30 入场三小时收齐白天+日落+夜景，概率 60% 为全程最高。"],prep:["提前 1-2 天官网购票（约 $40/人）；日落时段人多，占东南侧朝向；高空风大带外套。"],links:[{l:"官方",u:OFF.totr,k:"off"},{l:"小红书·4大观景台对比(已采集)",u:XHS.views4}]},
 {id:"spot-highline",type:"街区",title:"High Line 高线公园",date:"10/3",open:"07:00-22:00，免费。",go:"Chelsea Market 旁楼梯/电梯上桥。",why:["1930 年代高架货运铁路废弃后改造成的 1.45 英里空中花园，野生植被+艺术装置+穿行楼宇，是全球城市更新教科书案例。"],prep:["人多顺流走。"],links:[]},
 {id:"spot-whitney",type:"博物馆",title:"Whitney Museum 惠特尼美术馆（可选）",date:"10/3",open:"一般 10:30-18:00（周五延晚），需购票。",go:"High Line 南端起点旁。",why:["专注美国现当代艺术（霍珀、奥基夫、考尔德），户外露台可看哈德逊河与 High Line 全景。"],prep:["时间紧可只上露台。"],links:[]},
 {id:"spot-wv",type:"街区",title:"West Village 西村",date:"10/3",open:"全天。",go:"High Line 向南步行 12 分钟。",why:["纽约最迷人的褐石住宅区：《老友记》公寓外景(90 Bedford)、石墙酒吧(同性恋平权运动发源地)、蜿蜒的西村小巷与独立小店。"],prep:[],links:[]},
